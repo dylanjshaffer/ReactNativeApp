@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   Dimensions
 } from "react-native";
-import { Header } from "ReactNativeApp/src/components";
+import { Header, FilmDetails } from "ReactNativeApp/src/components";
 import styled from "styled-components/native";
 
 const { width, height } = Dimensions.get("window");
@@ -27,6 +27,11 @@ type Props = {};
 export default class App extends Component<Props> {
   state = {
     title: "Serenity",
+    releaseDate: "2005",
+    director: "Joss Whedon",
+    overview:
+      "When the renegade crew of Serenity agrees to hide a fugitive on their ship, they find themselves in an action-packed battle between the relentless military might of a totalitarian regime who will destroy anything – or anyone – to get the girl back and the bloodthirsty creatures who roam the uncharted areas of space. But... the greatest danger of all may be on their ship.",
+    cast: "Nathan Fillion, Summer Glau, Alan Tudyk",
     imageUrl: require("ReactNativeApp/src/assets/serenity-bg.jpg")
   };
   getMovie = () => {
@@ -36,10 +41,23 @@ export default class App extends Component<Props> {
     });
   };
   render() {
-    const { title, imageUrl } = this.state;
+    const {
+      title,
+      imageUrl,
+      releaseDate,
+      overview,
+      director,
+      cast
+    } = this.state;
     return (
       <Container>
         <Header imageUrl={imageUrl} title={title} />
+        <FilmDetails
+          releaseDate={releaseDate}
+          overview={overview}
+          director={director}
+          cast={cast}
+        />
       </Container>
     );
   }
