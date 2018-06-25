@@ -14,6 +14,7 @@ const HeaderImage = styled(ImageBackground)`
   padding-left: 15;
   padding-right: 15;
   top: 0;
+  margin-top: 10;
 `;
 const HeaderGradient = styled(LinearGradient)`
   width: ${width};
@@ -21,12 +22,12 @@ const HeaderGradient = styled(LinearGradient)`
   position: absolute;
 `;
 
-export class Header extends Component {
+export class ImageHeader extends Component {
   render() {
     const { imageUrl, title } = this.props;
     return (
       <HeaderImage source={{ uri: imageUrl }}>
-        <HeaderGradient colors={["transparent", "transparent", "#1b1b1b"]} />
+        <HeaderGradient colors={["#1b1b1b", "transparent", "#1b1b1b"]} />
         <Text style={{ fontFamily: "futura", fontSize: 50, color: "white" }}>
           {title}
         </Text>

@@ -7,7 +7,11 @@ import {
   TouchableOpacity,
   Dimensions
 } from "react-native";
-import { Header, FilmDetails } from "ReactNativeApp/src/components";
+import {
+  ImageHeader,
+  FilmDetails,
+  SearchBar
+} from "ReactNativeApp/src/components";
 import styled from "styled-components/native";
 
 const { width, height } = Dimensions.get("window");
@@ -58,16 +62,14 @@ export default class App extends Component<Props> {
     } = this.state;
     return (
       <Container>
-        <Header imageUrl={imageUrl} title={title} />
+        <SearchBar onChange={this.getMovie} />
+        <ImageHeader imageUrl={imageUrl} title={title} />
         <FilmDetails
           releaseDate={releaseDate}
           overview={overview}
           director={director}
           cast={cast}
         />
-        <TouchableOpacity onPress={() => this.getMovie("Escape from new york")}>
-          <Text style={{ color: "white" }}>MOVIE</Text>
-        </TouchableOpacity>
       </Container>
     );
   }
