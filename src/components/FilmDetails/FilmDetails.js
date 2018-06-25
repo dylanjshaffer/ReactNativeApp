@@ -10,12 +10,11 @@ const Container = styled(View)`
   padding: 15px;
 `;
 const DetailsContainer = styled(View)`
-  height: 60;
   justify-content: space-between;
   align-items: flex-start;
 `;
 const OverviewContainer = styled(View)`
-  margin-top: 25;
+  margin-top: 20;
 `;
 export class FilmDetails extends Component {
   render() {
@@ -24,8 +23,6 @@ export class FilmDetails extends Component {
       <Container>
         <DetailsContainer>
           <Text style={{ color: "white" }}>Relased {releaseDate}</Text>
-          <Text style={{ color: "white" }}>Directed by {director}</Text>
-          <Text style={{ color: "white" }}>Starring {cast}</Text>
         </DetailsContainer>
         <OverviewContainer>
           <Text style={{ color: "white", fontSize: 17 }}>{overview}</Text>

@@ -25,7 +25,7 @@ export class Header extends Component {
   render() {
     const { imageUrl, title } = this.props;
     return (
-      <HeaderImage source={imageUrl}>
+      <HeaderImage source={{ uri: imageUrl }}>
         <HeaderGradient colors={["transparent", "transparent", "#1b1b1b"]} />
         <Text style={{ fontFamily: "futura", fontSize: 50, color: "white" }}>
           {title}
