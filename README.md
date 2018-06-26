@@ -1,10 +1,12 @@
 # ReactNativeApp
-A simple mobile application that utilizes the TMDb API. Users can search and view details for thousands of films.
 
+A simple mobile application that utilizes the TMDb API. Users can search and view details for thousands of films.
 
 To-do:
 
 -add autocomplete results to search bar
+
+-implement react-native-navigation
 
 -add home screen with a "popular movies" carousel
 

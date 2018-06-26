@@ -1,33 +1,31 @@
-import React, { Component, Fragment } from "react";
-import { Text, View, Image, Dimensions } from "react-native";
-import styled from "styled-components/native";
-import LinearGradient from "react-native-linear-gradient";
+import React, { Component, Fragment } from "react"
+import { ScrollView } from "react-native"
+import styled from "styled-components/native"
+import { Subhead, Caption } from "ReactNativeApp/src/components"
 
-const { width, height } = Dimensions.get("window");
-
-const Container = styled(View)`
+const Container = styled(ScrollView)`
   flex: 1;
   padding: 15px;
-`;
-const DetailsContainer = styled(View)`
-  justify-content: space-between;
-  align-items: flex-start;
-`;
-const OverviewContainer = styled(View)`
-  margin-top: 20;
-`;
+`
 export class FilmDetails extends Component {
   render() {
-    const { releaseDate, director, overview, cast } = this.props;
+    const { overview, budget, revenue, status } = this.props
     return (
       <Container>
-        <DetailsContainer>
-          <Text style={{ color: "white" }}>Relased {releaseDate}</Text>
-        </DetailsContainer>
-        <OverviewContainer>
-          <Text style={{ color: "white", fontSize: 17 }}>{overview}</Text>
-        </OverviewContainer>
+        <Detail label="Overview" content={overview} />
+        <Detail label="Status" content={status} />
+        {/* <Detail label="Budget" content={budget}/>
+        <Detail label="Revenue" content={revenue}/> */}
       </Container>
-    );
+    )
   }
+}
+
+const Detail = ({ label, content }) => {
+  return (
+    <Fragment>
+      <Subhead fontWeight="bold" content={label} />
+      <Caption fontWeight="thin" content={content} style={{ marginTop: 5, marginBottom: 20 }} />
+    </Fragment>
+  )
 }

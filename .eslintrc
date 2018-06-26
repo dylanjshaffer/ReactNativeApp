@@ -1,0 +1,75 @@
+{
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "globals": {
+    "__DEV__": true,
+    "alert": true,
+    "console": true
+  },
+  "plugins": [
+    "react"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "prettier/standard"
+  ],
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "16"
+    }
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "no-trailing-spaces": 1,
+    "react/display-name": 0,
+    "react/prop-types": 0,
+    "eol-last": 1,
+    "no-unused-vars": 1,
+    "no-underscore-dangle": 0,
+    "no-useless-escape": 0,
+    "no-alert": 0,
+    "no-lone-blocks": 1,
+    "no-console": 0,
+    "no-extra-semi": 1,
+    "no-irregular-whitespace": 1,
+    "default-case": 1,
+    "no-multi-spaces": 1,
+    "array-bracket-spacing": 1,
+    "dot-location": [
+      1,
+      "property"
+    ],
+    "indent": [
+      0,
+      2
+    ],
+    "max-len": [
+      1,
+      330,
+      4
+    ],
+    "no-extra-parens": [
+      1,
+      "functions"
+    ],
+    "object-curly-spacing": [
+      0,
+      "always",
+      {
+        "objectsInObjects": false,
+        "arraysInObjects": true
+      }
+    ]
+  }
+}
