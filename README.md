@@ -5,7 +5,11 @@ A simple mobile application that utilizes the TMDb API. Users can search and vie
 To-do:
 
 -add autocomplete results to search bar
+
 -add home screen with a "popular movies" carousel
+
 -add cast, director fields to displayed film details
+
 -use Youtube API to include trailers
+
 -misc. styling
