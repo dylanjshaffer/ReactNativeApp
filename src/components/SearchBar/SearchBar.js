@@ -1,8 +1,7 @@
 import React, { Component } from "react"
-import { View, TextInput, Dimensions, Text, TouchableOpacity } from "react-native"
+import { View, Dimensions, TouchableOpacity } from "react-native"
 import styled from "styled-components/native"
 import ElevatedView from "react-native-elevated-view"
-import SearchableDropdown from "react-native-searchable-dropdown"
 import Autocomplete from "react-native-autocomplete-input"
 import { Body } from "ReactNativeApp/src/components"
 
@@ -22,13 +21,6 @@ const Container = styled(ElevatedView)`
   top: 0;
   z-index: 1000;
 `
-const SearchInput = styled(TextInput)`
-  width: 100%;
-  background-color: #bdbdbd;
-  border-radius: 25;
-  padding: 10px;
-  margin-top: 10;
-`
 
 export class SearchBar extends Component {
   state = { title: "", query: "", movies: [] }
@@ -47,12 +39,12 @@ export class SearchBar extends Component {
     onChange(movie)
   }
   render() {
-    const { title, movies, query } = this.state
-    const { onChange } = this.props
+    const { movies, query } = this.state
     return (
       <Container>
         <Autocomplete
           clearButtonMode={"always"}
+          placeholder="Enter a movie title..."
           containerStyle={{ marginTop: 10 }}
           inputContainerStyle={{ borderRadius: 4, backgroundColor: "#bdbdbd", paddingHorizontal: 5 }}
           listStyle={{ paddingHorizontal: 10, paddingVertical: 5 }}
